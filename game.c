@@ -330,7 +330,7 @@ main(int argc, char **argv) {
 			int i = (float)rand()/RAND_MAX * 16;
 			int j = (float)rand()/RAND_MAX * 14;
 			//Plant Growth
-			if(tiles[i][j] == PLANT) {
+			if(tiles[i][j] == PLANT || tiles[i][j] == VEG) {
 				tiles[i][j] = VEG;
 				float angle = (float)rand() / RAND_MAX * 2*M_PI;
 				int xoffset = round(cos(angle));
@@ -341,6 +341,13 @@ main(int argc, char **argv) {
 			} else if(tiles[i][j] == SAP) {
 				tiles[i][j] = TREE;
 				discovered[TREE - 1] = true;
+			} else if(tiles[i][j] == TREE) {
+				float angle = (float)rand() / RAND_MAX * 2*M_PI;
+				int xoffset = round(cos(angle));
+				int yoffset = round(sin(angle));
+				if(tiles[i + xoffset][j + yoffset] == EARTH) {
+					tiles[i + xoffset][j + yoffset] = SAP;
+				}
 			}
 		}
 
