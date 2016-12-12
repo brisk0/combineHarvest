@@ -226,15 +226,16 @@ main(int argc, char **argv) {
 											animal_count++;
 											tiles[i][j] = NONE;
 											discovered[ANIMAL - 1] = true;
-
-										} else {
-
-										//if it's a log you just made keep an axe in your hand
-										if(tiles[i][j] == LOG) {
-											player.holding = AXE;
-										} else {
 											player.holding = NONE;
-										}
+
+										} else {
+
+											//if it's a log you just made keep an axe in your hand
+											if(tiles[i][j] == LOG) {
+												player.holding = AXE;
+											} else {
+												player.holding = NONE;
+											}
 											discovered[tiles[i][j] - 1] = true;
 										}
 

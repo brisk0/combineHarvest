@@ -24,6 +24,6 @@ Alternatively, if you already have SDL installed on your system it may work to s
 
 ###Linux
 
-1. Clone / download / whatever the whole directory (windows folder is unnecessary of course).
+1. Clone / download / whatever the whole directory (windows folder is unnecessary of course) OR extract CHLinux to your favourite new folder.
 3. Ensure SDL2 is installed on your machine. Sorry folks but had some trouble removing the dependancy. 
 2. Run `./combineHarvest`

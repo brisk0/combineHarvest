@@ -6,6 +6,7 @@ all: $(FILENAME)
 
 release: win32 *.c
 	clang $(SRCNAME) -o$(FILENAME) -std=$(STD) -lSDL2 -lSDL2_image -lSDL2_mixer -lm -lz -Wall -O2
+	zip -r CHLinux.zip $(FILENAME) snd img
 
 $(FILENAME): *.c
 	clang $(SRCNAME) -o$(FILENAME) -std=$(STD) -lSDL2 -lSDL2_image -lSDL2_mixer -lm -lz -Wall -O0 -g
